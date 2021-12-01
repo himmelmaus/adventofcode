@@ -39,6 +39,8 @@ def get_partitions(lines):
 
     return partitions
 
+from time import time
+time1 = time()
 lines.append(max(lines) + 3)
 partitions = get_partitions(lines)
 running_total = 1
@@ -57,4 +59,5 @@ for partition in partitions:
         if total != 0:
             running_total *= total
 
+print("completed in ", time() - time1)
 print(lines, "\n", partitions, "\n", running_total)
